@@ -62,14 +62,7 @@ paths:
           content:
             application/json:
               schema:
-                allOf:
-                  - $ref: '#/components/schemas/Success'
-                  - type: object
-                    properties:
-                      batches:
-                        type: array
-                        items:
-                          $ref: '#/components/schemas/Batch'
+                $ref: '#/components/schemas/Success'
         "401":
           $ref: '#/components/responses/Unauthorized'
         "500":
@@ -204,7 +197,7 @@ paths:
           $ref: '#/components/responses/ErrorResponse'
 
 security:
-  - ApiKeyAuth: []
+  - ApiKeyAuth: [ ]
 
 components:
   securitySchemes:
@@ -242,17 +235,17 @@ components:
       properties:
         success:
           type: integer
-          enum: [1]
+          enum: [ 1 ]
 
     RentalType:
       type: string
-      enum: [PRE_RENTAL, RENTAL, POST_RENTAL, ALL]
+      enum: [ PRE_RENTAL, RENTAL, POST_RENTAL, ALL ]
     Country:
       type: string
-      enum: [AU, NZ, TEST]
+      enum: [ AU, NZ, TEST ]
     Brand:
       type: string
-      enum: [MJP, Flexicar]
+      enum: [ MJP, Flexicar ]
 
     CommonMeta:
       type: object
