@@ -62,7 +62,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Success'
+                allOf:
+                  - $ref: '#/components/schemas/Success'
+                  - type: object
+                    properties:
+                      batches:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Batch'
         "401":
           $ref: '#/components/responses/Unauthorized'
         "500":
@@ -183,14 +190,7 @@ paths:
           content:
             application/json:
               schema:
-                allOf:
-                  - $ref: '#/components/schemas/Success'
-                  - type: object
-                    properties:
-                      batches:
-                        type: array
-                        items:
-                          $ref: '#/components/schemas/Batch'
+                $ref: '#/components/schemas/Success'
         "401":
           $ref: '#/components/responses/Unauthorized'
         "500":
