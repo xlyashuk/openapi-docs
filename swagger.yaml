@@ -165,23 +165,10 @@ paths:
             schema:
               type: object
               properties:
-                registration:
-                  type: string
-                  minLength: 2
-                  maxLength: 12
-                virNumber:
-                  type: string
-                location:
-                  type: string
-                country:
-                  $ref: '#/components/schemas/Country'
-                photoUrls:
-                  type: array
-                  items:
-                    type: string
-                  description: Photo URLs that are uploaded to eRepair
+                batchId:
+                  type: number
               required:
-                - location
+                - batchId
                 - country
                 - photoUrls
       responses:
